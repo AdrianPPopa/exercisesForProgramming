@@ -1,6 +1,5 @@
 package Chapter3;
 
-import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
@@ -28,8 +27,7 @@ public class CurrencyConversion {
         NumberFormat formatter2 = NumberFormat.getCurrencyInstance(Locale.ITALY);
         String formatEuro = formatter2.format(numberOfEuros);
 
-        BigDecimal deci = new BigDecimal(numberOfDollars);
-        
+
 
         System.out.println("How many euros are you exchanging? " + numberOfEuros + "\n" +
                 "What is the exchange rate? " + exchangeRate + "\n" +
