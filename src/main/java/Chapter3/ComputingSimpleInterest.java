@@ -13,17 +13,17 @@ public class ComputingSimpleInterest {
     private void calculateInterest () {
         Scanner scanner = new Scanner(System.in);
         int amount;
-        int rateOfInterest;
+        double rateOfInterest;
         int numberOfYears;
 
         System.out.println("Enter the principal amount:");
         amount = scanner.nextInt();
         System.out.println("Enter the rate of interest:");
-        rateOfInterest = scanner.nextInt();
+        rateOfInterest = scanner.nextDouble();
         System.out.println("Enter the number of years:");
         numberOfYears = scanner.nextInt();
 
-        double interestInPercentage = (double) rateOfInterest / 100;
+        double interestInPercentage = rateOfInterest / 100;
         double worthAmount = amount * (1+ interestInPercentage * numberOfYears);
 
         NumberFormat formatToPercentage = NumberFormat.getPercentInstance();
