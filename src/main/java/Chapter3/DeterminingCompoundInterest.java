@@ -1,6 +1,5 @@
 package Chapter3;
 
-import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
@@ -35,7 +34,6 @@ public class DeterminingCompoundInterest {
 
         System.out.println("What is the number of times the interest is compounded per year?");
         timesInterestCompoundedAnnualy = scanner.nextInt();
-        DecimalFormat df = new DecimalFormat(".00");
 
         double interestInPercentage = annualRate /100;
 
