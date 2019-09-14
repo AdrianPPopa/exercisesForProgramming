@@ -33,6 +33,7 @@ public class TroubleshootingCarIssues {
                 }
                 if (userResponse.equals("y")) {
                     System.out.println("Check spark plug connections");
+                    break;
                 } else if (userResponse.equals("n")) {
                     System.out.println("Does the engine start and then die?");
                     userResponse = scanner.nextLine();
