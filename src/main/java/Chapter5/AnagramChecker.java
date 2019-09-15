@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class AnagramChecker {
     public static void main(String[] args) {
+
       if (isAnagram()){
           System.out.println("These words are anagrams");
       } else {
@@ -13,6 +14,7 @@ public class AnagramChecker {
     }
 
     private static boolean isAnagram(){
+        System.out.println("Enter two strings and I will tell you if they are anagrams: ");
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the first string");
