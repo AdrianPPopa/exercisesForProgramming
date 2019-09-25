@@ -8,7 +8,9 @@ private double userBalance = getBalanceFromUser();
 private double userAnnualPercentageRate = getAPRfromUser() /100.0;
 private double userMonthlyPayment = getMonthlyPaymentFromUser();
 private double months = calculateMonthsUntilPaidOff(userBalance,userAnnualPercentageRate,userMonthlyPayment);
-
+private void result(){
+    System.out.println("It will take you " + (int)Math.ceil(months) + " months to pay off this card");
+    }
     public static void main(String[] args) {
         MonthsToPayOffACreditCard card = new MonthsToPayOffACreditCard();
         card.result();
@@ -22,7 +24,7 @@ private double months = calculateMonthsUntilPaidOff(userBalance,userAnnualPercen
 
     private double getAPRfromUser (){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What is the APR on the card ?");
+        System.out.println("What is the APR on the card (as percent)?");
         return scanner.nextDouble();
     }
 
@@ -33,14 +35,10 @@ private double months = calculateMonthsUntilPaidOff(userBalance,userAnnualPercen
     }
 
     private double calculateMonthsUntilPaidOff (double balance,double apr, double monthlyPayment) {
-        double dailyRate = apr/365;
+        double dailyRate = userAnnualPercentageRate /365;
         double numerator = Math.log(1+ balance/monthlyPayment *(1- Math.pow((1+dailyRate),30)));
         double denominator = Math.log(1+dailyRate);
         return (-1.0 /30.0) * (numerator/denominator);
-    }
-
-    private void  result(){
-        System.out.println("It will take you " + (int)Math.ceil(months) + " months to pay off this card");
     }
 }
 
