@@ -31,7 +31,8 @@ public class GuessTheNumberGame {
         } else if (chosenDifficulty == 3){
             randomNumber = randomRange(1,1000);
             guessTheNumber();
-        }
+        } else System.out.println("The difficulty can be from 1 to 3, try again");
+            chooseDifficulty();
     }
 
     private static int randomRange (int start, int finish){
@@ -55,6 +56,21 @@ public class GuessTheNumberGame {
             return getPlayerGuess();
         }
     }
+    private String askToPlayAgain(){
+        try {numberOfGuesses = 1;
+            return new Scanner(System.in).nextLine();
+
+        } catch (InputMismatchException e){
+            System.out.println("Please type " + "\"" +"y " + "\"" + " to play again or anything else to exit");
+            return askToPlayAgain();
+        }
+    }
+
+    private void restartOrEnd(){
+        if (askToPlayAgain().equals("y")){
+            start();
+        } else System.out.println("Thanks for playing, goodbye!");System.exit(0);
+    }
 
     private void guessTheNumber () {
         System.out.println("I have my number, what is your guess?");
@@ -65,6 +81,8 @@ public class GuessTheNumberGame {
             if (guess == randomNumber) {
                 System.out.println("You got it in " + numberOfGuesses + " guesses.");
                 gameOver = true;
+                System.out.println("Press " + "\"" + "y" + "\"" + " to play again or anything else to exit");
+                restartOrEnd();
             } else if (guess > randomNumber) {
                 System.out.println("Too high, try again!");
                 numberOfGuesses++;
