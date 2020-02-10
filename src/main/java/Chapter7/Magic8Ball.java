@@ -32,7 +32,7 @@ public class Magic8Ball {
     }
 
     private int randomNumberGenerator(){
-        return new Random().nextInt(4);
+        return new Random().nextInt(answers.size());
     }
 
     private void giveAnswerToUser(){
